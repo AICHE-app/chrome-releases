@@ -11,22 +11,48 @@
 			padding: 0;
 		}
 
+		:root {
+			color-scheme: light;
+			--bg: #f5f5f5;
+			--surface: #ffffff;
+			--text: #1a1a1a;
+			--text-muted: #666;
+			--shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+			--accent: #22A046;
+			--accent-hover: #1d8a3a;
+			--danger: #d32f2f;
+			--spinner-track: #f3f3f3;
+		}
+
+		:root[data-theme='dark'] {
+			color-scheme: dark;
+			--bg: #0f0f0f;
+			--surface: #1a1a1a;
+			--text: #f5f5f5;
+			--text-muted: #a0a0a0;
+			--shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+			--accent: #22A046;
+			--accent-hover: #1d8a3a;
+			--danger: #f87171;
+			--spinner-track: #2a2a2a;
+		}
+
 		body {
 			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			min-height: 100vh;
-			background: #f5f5f5;
+			background: var(--bg);
 		}
 
 		.container {
-			background: white;
+			background: var(--surface);
 			border-radius: 12px;
 			padding: 48px;
 			text-align: center;
 			max-width: 400px;
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+			box-shadow: var(--shadow);
 		}
 
 		.icon {
@@ -37,11 +63,11 @@
 		h1 {
 			font-size: 24px;
 			margin-bottom: 12px;
-			color: #1a1a1a;
+			color: var(--text);
 		}
 
 		p {
-			color: #666;
+			color: var(--text-muted);
 			margin-bottom: 24px;
 			line-height: 1.5;
 		}
@@ -50,8 +76,8 @@
 			width: 40px;
 			height: 40px;
 			margin: 0 auto;
-			border: 4px solid #f3f3f3;
-			border-top: 4px solid #22A046;
+			border: 4px solid var(--spinner-track);
+			border-top: 4px solid var(--accent);
 			border-radius: 50%;
 			animation: spin 1s linear infinite;
 		}
@@ -62,11 +88,11 @@
 		}
 
 		.success {
-			color: #22A046;
+			color: var(--accent);
 		}
 
 		.error {
-			color: #d32f2f;
+			color: var(--danger);
 		}
 
 		.hidden {
@@ -74,8 +100,8 @@
 		}
 
 		button {
-			background: #22A046;
-			color: white;
+			background: var(--accent);
+			color: #ffffff;
 			border: none;
 			padding: 12px 24px;
 			border-radius: 6px;
@@ -85,7 +111,7 @@
 		}
 
 		button:hover {
-			background: #1d8a3a;
+			background: var(--accent-hover);
 		}
 	</style>
 </head>

@@ -11,17 +11,47 @@
 			padding: 0;
 		}
 
+		:root {
+			color-scheme: light;
+			--bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			--surface: #ffffff;
+			--text: #1a1a1a;
+			--text-muted: #666;
+			--text-subtle: #999;
+			--accent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			--accent-shadow: rgba(102, 126, 234, 0.4);
+			--button-text: #ffffff;
+			--disabled: #e0e0e0;
+			--success: #22A046;
+			--error: #d32f2f;
+		}
+
+		:root[data-theme='dark'] {
+			color-scheme: dark;
+			--bg: linear-gradient(135deg, #0f172a 0%, #1f2937 100%);
+			--surface: #1a1a1a;
+			--text: #f5f5f5;
+			--text-muted: #a0a0a0;
+			--text-subtle: #7b8292;
+			--accent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			--accent-shadow: rgba(15, 23, 42, 0.5);
+			--button-text: #ffffff;
+			--disabled: #333;
+			--success: #22A046;
+			--error: #f87171;
+		}
+
 		body {
 			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			min-height: 100vh;
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			background: var(--bg);
 		}
 
 		.container {
-			background: white;
+			background: var(--surface);
 			border-radius: 16px;
 			padding: 56px 48px;
 			text-align: center;
@@ -33,7 +63,7 @@
 			width: 80px;
 			height: 80px;
 			margin: 0 auto 32px;
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			background: var(--accent);
 			border-radius: 20px;
 			display: flex;
 			align-items: center;
@@ -48,28 +78,28 @@
 		h1 {
 			font-size: 32px;
 			margin-bottom: 16px;
-			color: #1a1a1a;
+			color: var(--text);
 			font-weight: 700;
 			letter-spacing: -0.5px;
 		}
 
 		.subtitle {
-			color: #666;
+			color: var(--text-muted);
 			margin-bottom: 12px;
 			line-height: 1.6;
 			font-size: 17px;
 		}
 
 		.description {
-			color: #999;
+			color: var(--text-subtle);
 			margin-bottom: 40px;
 			line-height: 1.5;
 			font-size: 14px;
 		}
 
 		button {
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-			color: white;
+			background: var(--accent);
+			color: var(--button-text);
 			border: none;
 			padding: 18px 40px;
 			border-radius: 12px;
@@ -77,7 +107,7 @@
 			font-weight: 600;
 			cursor: pointer;
 			transition: all 0.3s ease;
-			box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+			box-shadow: 0 4px 15px var(--accent-shadow);
 		}
 
 		button:hover {
@@ -90,7 +120,7 @@
 		}
 
 		button:disabled {
-			background: #e0e0e0;
+			background: var(--disabled);
 			cursor: not-allowed;
 			box-shadow: none;
 			transform: none;
@@ -104,11 +134,11 @@
 		}
 
 		.success {
-			color: #22A046;
+			color: var(--success);
 		}
 
 		.error {
-			color: #d32f2f;
+			color: var(--error);
 		}
 	</style>
 </head>
