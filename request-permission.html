@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AICHE Voice-to-Text - Grant Microphone Access</title>
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		}
+
+		.container {
+			background: white;
+			border-radius: 16px;
+			padding: 56px 48px;
+			text-align: center;
+			max-width: 480px;
+			box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+		}
+
+		.icon-wrapper {
+			width: 80px;
+			height: 80px;
+			margin: 0 auto 32px;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			border-radius: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.icon-wrapper img {
+			width: 48px;
+			height: 48px;
+		}
+
+		h1 {
+			font-size: 32px;
+			margin-bottom: 16px;
+			color: #1a1a1a;
+			font-weight: 700;
+			letter-spacing: -0.5px;
+		}
+
+		.subtitle {
+			color: #666;
+			margin-bottom: 12px;
+			line-height: 1.6;
+			font-size: 17px;
+		}
+
+		.description {
+			color: #999;
+			margin-bottom: 40px;
+			line-height: 1.5;
+			font-size: 14px;
+		}
+
+		button {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+			border: none;
+			padding: 18px 40px;
+			border-radius: 12px;
+			font-size: 16px;
+			font-weight: 600;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+		}
+
+		button:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+		}
+
+		button:active {
+			transform: translateY(0);
+		}
+
+		button:disabled {
+			background: #e0e0e0;
+			cursor: not-allowed;
+			box-shadow: none;
+			transform: none;
+		}
+
+		#status {
+			margin-top: 24px;
+			font-weight: 600;
+			font-size: 15px;
+			min-height: 20px;
+		}
+
+		.success {
+			color: #22A046;
+		}
+
+		.error {
+			color: #d32f2f;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="icon-wrapper">
+			<img src="assets/icons/icon-128.png" alt="AICHE Voice-to-Text">
+		</div>
+		<h1>Microphone Access</h1>
+		<p class="subtitle">AICHE Voice-to-Text needs access to your microphone to record your voice and transcribe it to text.</p>
+		<p class="description">Click the button below and allow microphone access when Chrome asks.</p>
+		<button id="grant-btn">Grant Microphone Access</button>
+		<p id="status"></p>
+	</div>
+
+	<script src="request-permission.js"></script>
+</body>
+</html>

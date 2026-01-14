@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AICHE Voice-to-Text - Connecting...</title>
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			background: #f5f5f5;
+		}
+
+		.container {
+			background: white;
+			border-radius: 12px;
+			padding: 48px;
+			text-align: center;
+			max-width: 400px;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		}
+
+		.icon {
+			font-size: 48px;
+			margin-bottom: 24px;
+		}
+
+		h1 {
+			font-size: 24px;
+			margin-bottom: 12px;
+			color: #1a1a1a;
+		}
+
+		p {
+			color: #666;
+			margin-bottom: 24px;
+			line-height: 1.5;
+		}
+
+		.spinner {
+			width: 40px;
+			height: 40px;
+			margin: 0 auto;
+			border: 4px solid #f3f3f3;
+			border-top: 4px solid #22A046;
+			border-radius: 50%;
+			animation: spin 1s linear infinite;
+		}
+
+		@keyframes spin {
+			0% { transform: rotate(0deg); }
+			100% { transform: rotate(360deg); }
+		}
+
+		.success {
+			color: #22A046;
+		}
+
+		.error {
+			color: #d32f2f;
+		}
+
+		.hidden {
+			display: none;
+		}
+
+		button {
+			background: #22A046;
+			color: white;
+			border: none;
+			padding: 12px 24px;
+			border-radius: 6px;
+			font-size: 14px;
+			cursor: pointer;
+			margin-top: 16px;
+		}
+
+		button:hover {
+			background: #1d8a3a;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div id="loading-view">
+			<div class="icon">🔗</div>
+			<h1>Connecting your account...</h1>
+			<p>Please wait while we complete the authentication.</p>
+			<div class="spinner"></div>
+		</div>
+
+		<div id="success-view" class="hidden">
+			<div class="icon success">✓</div>
+			<h1>Connected!</h1>
+			<p>Your AICHE account has been successfully connected to Chrome.</p>
+			<p>This window will close automatically.</p>
+		</div>
+
+		<div id="error-view" class="hidden">
+			<div class="icon error">✗</div>
+			<h1>Connection Failed</h1>
+			<p id="error-message">Something went wrong. Please try again.</p>
+			<button id="retry-btn">Retry</button>
+		</div>
+	</div>
+
+	<script src="auth-callback.js"></script>
+</body>
+</html>

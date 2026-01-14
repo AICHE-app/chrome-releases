@@ -1,0 +1,77 @@
+{
+  "manifest_version": 3,
+  "name": "AICHE Voice-to-Text",
+  "version": "1.0.0",
+  "description": "AI-powered voice transcription. Speak naturally, get polished text instantly. Works on any website.",
+  "author": "AICHE",
+
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon-16.png",
+      "32": "assets/icons/icon-32.png",
+      "48": "assets/icons/icon-48.png"
+    },
+    "default_title": "AICHE Voice-to-Text"
+  },
+
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "offscreen",
+    "scripting",
+    "sidePanel",
+    "commands",
+    "identity",
+    "notifications",
+    "contextMenus"
+  ],
+
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "commands": {
+    "toggle-recording": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+R",
+        "mac": "Command+Shift+R"
+      },
+      "description": "Start or stop voice recording"
+    },
+    "open-history": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Open transcription history"
+    }
+  },
+
+  "side_panel": {
+    "default_path": "sidepanel/sidepanel.html"
+  },
+
+  "options_page": "options/options.html",
+
+  "web_accessible_resources": [
+    {
+      "resources": ["offscreen/offscreen.html", "offscreen/offscreen.js", "offscreen/offscreen-inline.html", "offscreen/offscreen-inline.js", "auth-callback.html", "auth-callback.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
