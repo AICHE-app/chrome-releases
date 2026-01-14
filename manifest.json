@@ -37,9 +37,6 @@
     "contextMenus"
   ],
 
-  "host_permissions": [
-    "<all_urls>"
-  ],
 
   "commands": {
     "toggle-recording": {
@@ -67,7 +64,7 @@
   "web_accessible_resources": [
     {
       "resources": ["offscreen/offscreen.html", "offscreen/offscreen.js", "offscreen/offscreen-inline.html", "offscreen/offscreen-inline.js", "auth-callback.html", "auth-callback.js"],
-      "matches": ["<all_urls>"]
+      "matches": ["http://*/*", "https://*/*"]
     }
   ],
 
